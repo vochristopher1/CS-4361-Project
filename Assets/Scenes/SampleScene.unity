@@ -514,7 +514,6 @@ GameObject:
   - component: {fileID: 372588649}
   - component: {fileID: 372588648}
   - component: {fileID: 372588647}
-  - component: {fileID: 372588646}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -522,20 +521,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &372588646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 372588645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9da2bcf35d4a9cf4c967243e081578e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PauseMenu: {fileID: 372588645}
-  IsPaused: 0
 --- !u!114 &372588647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2444,7 +2429,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 372588646}
+      - m_Target: {fileID: 1833150053}
         m_TargetAssemblyTypeName: PauseControl, Assembly-CSharp
         m_MethodName: ExitButton
         m_Mode: 1
@@ -2739,7 +2724,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 372588646}
+      - m_Target: {fileID: 1833150053}
         m_TargetAssemblyTypeName: PauseControl, Assembly-CSharp
         m_MethodName: ResumeButton
         m_Mode: 1
