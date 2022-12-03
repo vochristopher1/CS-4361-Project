@@ -32,9 +32,6 @@ public class PauseControl : MonoBehaviour
 
     public void ExitButton()
     {
-        #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-        #endif
-        Application.Quit();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 }
