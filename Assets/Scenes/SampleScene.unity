@@ -1041,7 +1041,6 @@ GameObject:
   - component: {fileID: 578830084}
   - component: {fileID: 578830083}
   - component: {fileID: 578830089}
-  - component: {fileID: 578830090}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1181,20 +1180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7adffbb035e3cc349a12ae1362a61eec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &578830090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 578830082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9da2bcf35d4a9cf4c967243e081578e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PauseMenu: {fileID: 372588645}
-  IsPaused: 0
 --- !u!4 &584362573 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5606563820364086171, guid: 5107bfa9d4d7d1a47a99be27d0e700d7,
@@ -2328,7 +2313,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -2636,7 +2621,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -2835,7 +2820,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 372588645}
+  HUD: {fileID: 1720698760}
   IsPaused: 0
+  Vol: {fileID: 832575518}
 --- !u!4 &1833150054
 Transform:
   m_ObjectHideFlags: 0
