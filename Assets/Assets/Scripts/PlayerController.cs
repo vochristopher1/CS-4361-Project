@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     {
         float hInput = Input.GetAxis("Horizontal");
         direction.x = hInput * speed;
-        bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
+        bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.1f, groundLayer);
 
         if (isGrounded)
         {
