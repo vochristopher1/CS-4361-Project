@@ -3700,7 +3700,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 372588645}
+  HUD: {fileID: 1720698760}
   IsPaused: 0
+  Vol: {fileID: 832575518}
 --- !u!4 &1833150054
 Transform:
   m_ObjectHideFlags: 0
