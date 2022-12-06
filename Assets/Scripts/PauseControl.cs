@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
+
 public class PauseControl : MonoBehaviour
 {
     public GameObject PauseMenu;
@@ -43,5 +44,6 @@ public class PauseControl : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
         dof.focalLength.value = 0f;
+        Application.Quit();
     }
 }

@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public float attackRange = 2;
     public int health;
     public int maxHealth;
+    public Animator animator;
 
     void Start()
     {
@@ -22,6 +23,12 @@ public class Enemy : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, target.position);
 
+        if (PlayerManager.gameOver)
+        {
+            animator.enabled = false;
+            this.enabled = false;
+        }
+
         if (currentState == "IdleState")
         {
             if (distance < chaseRange) 
@@ -29,17 +36,29 @@ public class Enemy : MonoBehaviour
         }
         else if (currentState == "ChaseState")
         {
+            animator.SetTrigger("chase");
+            animator.SetBool("attacking", false);
+
+            if (distance < attackRange)
+            {
+                currentState = "AttackState";
+            }
+
             if (target.position.x > transform.position.x)
             {
                 transform.Translate(transform.right * speed * Time.deltaTime);
+                transform.rotation = Quaternion.identity;
             }
             else
             {
                 transform.Translate(-transform.right * speed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0, 180, 0);
             }
         }
         else if (currentState == "AttackState")
         {
+            animator.SetBool("attacking", true);
+
             if (distance > attackRange)
                 currentState = "ChaseState";
         }
