@@ -12,12 +12,22 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
     public bool doubleJump = true;
+    public Animator animator;
+    public Transform model;
 
     void Update()
     {
         float hInput = Input.GetAxis("Horizontal");
         direction.x = hInput * speed;
         bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
+        animator.SetBool("grounded", isGrounded);
+        animator.SetFloat("speed", Mathf.Abs(hInput));
+
+        if (PlayerManager.gameOver)
+        {
+            animator.SetTrigger("death");
+            this.enabled = false;
+        }
 
         if (isGrounded)
         {
@@ -36,6 +46,12 @@ public class PlayerController : MonoBehaviour
                 DoubleJump();
             }
         }
+
+        if (hInput != 0)
+        {
+            Quaternion newRotation = Quaternion.LookRotation(new Vector3(hInput, 0, 0));
+            model.rotation = newRotation;
+        }
         
         controller.Move(direction * Time.deltaTime);
 
@@ -45,6 +61,7 @@ public class PlayerController : MonoBehaviour
 
     private void DoubleJump()
     {
+        animator.SetTrigger("secondjump");
         direction.y = jumpForce;
         doubleJump = false;
     }
