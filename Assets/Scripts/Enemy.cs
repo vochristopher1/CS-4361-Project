@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
         }
         else if (currentState == "ChaseState")
         {
-            animator.SetTrigger("chase");
+            animator.SetBool("Chase", true);
             animator.SetBool("attacking", false);
 
             if (distance < attackRange)
@@ -64,17 +64,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-/*
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-
-        if (health < 0)
-        {
-            Die();
-        }
-    }
-*/
     public void Kill() 
     {
         Destroy(gameObject);
